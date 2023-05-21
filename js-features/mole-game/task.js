@@ -8,7 +8,6 @@ getHole = index => document.getElementById(`hole${index}`);
 
 for(let holeIndex = 1; holeIndex < 10; holeIndex++){
   let hole = getHole(holeIndex);
-  hole.onclick = function(){
-    console.log('!!!!')
-  }
+  hole.addEventListener
+  console.log(hole)
 }
