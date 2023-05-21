@@ -15,11 +15,11 @@ for(let holeIndex = 1; holeIndex < 10; holeIndex++){
       counterLost++;
     }
     if(counterDead === 10){
-      alert('Win!');
+      alert('Вы выйграли!');
       counterDead = 0;
       counterLost = 0;
     }else if(counterLost === 5){
-      alert('Lost!')
+      alert('Вы проиграли!')
       counterDead = 0;
       counterLost = 0;
     }
