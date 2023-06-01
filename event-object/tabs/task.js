@@ -1,8 +1,6 @@
 const tabArr = Array.from(document.querySelectorAll('.tab'));
 const contentArr = Array.from(document.querySelectorAll('.tab__content'));
 
-
-
 tabArr.forEach(item => {
   item.addEventListener('click', (event) => {
     tabArr.forEach(item => {
