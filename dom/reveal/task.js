@@ -1,4 +1,4 @@
-const blocks = Array.from(document.querySelectorAll('.reveal'));
+const arrBlock = Array.from(document.querySelectorAll('.reveal'));
 
 function isVisible(el){
   const { top, bottom } = el.getBoundingClientRect();
@@ -12,7 +12,7 @@ function isVisible(el){
 }
 
 window.addEventListener('scroll', () => {
-  blocks.forEach(block => {
+  arrBlock.forEach(block => {
     if(isVisible(block)){
       block.classList.add('reveal_active');
     }
