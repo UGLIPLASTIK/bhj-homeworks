@@ -13,9 +13,9 @@ addBtns.forEach(btn => {
     cart.insertAdjacentHTML('beforeEnd', block);
     let img = btn.closest('.product').querySelector('img').cloneNode(true);
     let newDataId = btn.closest('.product').getAttribute('data-id');
+    cart.lastChild.setAttribute('data-id', newDataId);
     cart.lastChild.replaceChild(img, cart.lastChild.children[0]);
     cart.lastChild.querySelector('.cart__product-count').textContent = btn.previousElementSibling.querySelector('.product__quantity-value').textContent;
-    cart.lastChild.setAttribute('data-id', newDataId)
   })
 })
 
