@@ -15,6 +15,3 @@ popupClose.addEventListener('click', () => {
   popup.classList.remove('modal_active');
   document.cookie = 'check' + '=' + encodeURIComponent('checked');
 })
-
-
-
