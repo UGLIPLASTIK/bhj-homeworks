@@ -1,8 +1,5 @@
 const popup = document.getElementById('subscribe-modal');
 const popupClose = document.querySelector('.modal__close');
-console.log(document.cookie.includes('checked'));
-console.log(document.cookie)
-
 
 function subscribe(){
   let timer = setTimeout(() => {
