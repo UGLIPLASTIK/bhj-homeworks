@@ -11,11 +11,16 @@ form.addEventListener('submit', (event) => {
     <a href="#" class="task__remove">&times;</a>
   </div>`;
   taskList.insertAdjacentHTML('beforeEnd', block);
-  taskList.lastElementChild.firstChild.textContent = taskInput.value;
-  Array.from(document.querySelectorAll('.task__remove')).forEach(item => {
-    item.addEventListener('click', () => {
-      item.parentElement.remove();
-    });
-  });
+  taskList.lastElementChild.querySelector('.task__title').textContent = taskInput.value.trim();
+
+  if(taskList.lastElementChild.querySelector('.task__title').textContent === ''){
+    alert('Заполните поле!');
+    taskList.lastElementChild.querySelector('.task__remove').parentElement.remove();
+    } else {
+      taskList.lastElementChild.querySelector('.task__remove').addEventListener('click', () => {
+        taskList.lastElementChild.querySelector('.task__remove').parentElement.remove();
+      });
+  }
+  
   form.reset();
 })
