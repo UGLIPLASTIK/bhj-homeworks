@@ -3,8 +3,12 @@ const quantityControls = Array.from(document.querySelectorAll('.product__quantit
 const quantityValue = document.querySelector('.product__quantity-value');
 const addBtns = document.querySelectorAll('.product__add');
 
+
 addBtns.forEach(btn => {
   btn.addEventListener('click', () => {
+    
+  
+
     const block = `
       <div class="cart__product" data-id="1">
         <img class="cart__product-image" src="">
@@ -16,6 +20,12 @@ addBtns.forEach(btn => {
     cart.lastChild.setAttribute('data-id', newDataId);
     cart.lastChild.replaceChild(img, cart.lastChild.children[0]);
     cart.lastChild.querySelector('.cart__product-count').textContent = btn.previousElementSibling.querySelector('.product__quantity-value').textContent;
+    const products = Array.from(cart.querySelectorAll('.cart__product'));
+    console.log(products)
+    console.log(products.find((item) => {
+      
+    }))
+
   })
 })
 
