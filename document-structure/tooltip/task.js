@@ -8,8 +8,12 @@ hasTooltips.forEach(item => {
   item.addEventListener('click', (event) => {
     event.preventDefault();
     let coords = item.getBoundingClientRect();
+    let messageCoords = message.getBoundingClientRect();
+    message.classList.add('tooltip_active');
+    if(messageCoords.top.toFixed(4) === coords.bottom.toFixed(4)){
+      message.classList.remove('tooltip_active');
+    }
     message.textContent = item.title;
-    message.classList.toggle('tooltip_active');
     message.style.left = coords.left + "px";
     message.style.top = coords.bottom + "px";
   })
