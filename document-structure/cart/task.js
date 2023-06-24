@@ -6,8 +6,18 @@ const addBtns = document.querySelectorAll('.product__add');
 
 addBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    
-  
+    let products = Array.from(cart.querySelectorAll('.cart__product'));
+    let currentID = btn.closest('.product').getAttribute('data-id');
+
+    function compareIndex(el){
+      return el.getAttribute('data-id') === currentID;
+    }
+    let doubleItem = products.find(compareIndex);
+
+    if(doubleItem){
+      doubleItem.querySelector('.cart__product-count').textContent = Number(btn.closest('.product').querySelector('.product__quantity-value').textContent) + Number(doubleItem.querySelector('.cart__product-count').textContent);
+      return
+    }
 
     const block = `
       <div class="cart__product" data-id="1">
@@ -18,14 +28,9 @@ addBtns.forEach(btn => {
     let img = btn.closest('.product').querySelector('img').cloneNode(true);
     let newDataId = btn.closest('.product').getAttribute('data-id');
     cart.lastChild.setAttribute('data-id', newDataId);
+
     cart.lastChild.replaceChild(img, cart.lastChild.children[0]);
     cart.lastChild.querySelector('.cart__product-count').textContent = btn.previousElementSibling.querySelector('.product__quantity-value').textContent;
-    const products = Array.from(cart.querySelectorAll('.cart__product'));
-    console.log(products)
-    console.log(products.find((item) => {
-      
-    }))
-
   })
 })
 
