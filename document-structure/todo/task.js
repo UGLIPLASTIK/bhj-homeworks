@@ -16,14 +16,11 @@ form.addEventListener('submit', (event) => {
   if(taskList.lastElementChild.querySelector('.task__title').textContent === ''){
     alert('Заполните поле!');
     taskList.lastElementChild.querySelector('.task__remove').parentElement.remove();
-    } 
+  } 
     
-    taskList.lastElementChild.querySelector('.task__remove').addEventListener('click', () => {
-      // taskList.lastElementChild.querySelector('.task__remove').parentElement.remove();
-      console.log(taskList.lastElementChild.querySelector('.task__remove').closest('.task'))
-      console.log(taskList.lastElementChild.querySelector('.task__remove').parentElement)
-    });
-  
+  taskList.lastElementChild.querySelector('.task__remove').addEventListener('click', (event) => {
+    event.currentTarget.parentElement.remove();
+  });
   
   form.reset();
 })
