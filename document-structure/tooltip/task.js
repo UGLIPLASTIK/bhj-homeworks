@@ -10,9 +10,10 @@ hasTooltips.forEach(item => {
     let coords = item.getBoundingClientRect();
     let messageCoords = message.getBoundingClientRect();
     message.classList.add('tooltip_active');
-    if(messageCoords.top.toFixed(4) === coords.bottom.toFixed(4)){
+    if(messageCoords.left.toFixed(4) === coords.left.toFixed(4)){
       message.classList.remove('tooltip_active');
     }
+
     message.textContent = item.title;
     message.style.left = coords.left + "px";
     message.style.top = coords.bottom + "px";
