@@ -5,9 +5,8 @@ document.forms.form.addEventListener('submit', (e) => {
   const xhr = new XMLHttpRequest();
 
   xhr.upload.onprogress = function(event) {
-    // console.log(`Отправлено ${event.loaded} из ${event.total}`);
-    // console.log(event.loaded)
-
+    console.log(`Отправлено ${event.loaded} из ${event.total}`);
+    console.log(event.loaded);
   };
 
   xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
